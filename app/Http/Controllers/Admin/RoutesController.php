@@ -54,8 +54,8 @@ class RoutesController extends Controller
 
     public function sysLog()
     {
-        $this->data['top_active'] = 'admin_sys';
-        $this->data['sub_active'] = 'admin_sys_log';
+        $this->data['top_active'] = 'sys';
+        $this->data['sub_active'] = 'sys_log';
         $this->data['js_file'] = 'sys/log.js';
         return view('admin.sys.log', $this->data);
     }

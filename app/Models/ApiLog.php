@@ -14,9 +14,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ApiLog extends Model
 {
-    use  SoftDeletes;
 
-    protected $table='log';
+    protected $table='api_log';
 
     protected  $guarded=[];
 

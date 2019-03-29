@@ -11,7 +11,7 @@
                 <van-loading  type="spinner" color="white" style="margin: 0 auto;" />
             </div>
             <van-list v-model="listLoading" :finished="finished" finished-text="没有更多了" @load="nextPage">
-                <van-card v-for="order in orderData"
+                <van-card v-for="order in orderData" style="margin-top: 5px;"
                           :thumb="'<?php echo $url ?>api/img/'+order.goods.image_id"
                           :thumb-link="'/wap/order/detail/'+order.id"
                           :desc="order.coupon_card.coupon.name"

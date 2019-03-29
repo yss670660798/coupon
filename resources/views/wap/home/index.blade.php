@@ -24,8 +24,8 @@
         {{--表单--}}
         <div style="margin-top: 10px;">
             <van-cell-group>
-                <van-field v-model="param.card_no" required clearable label="用户名" placeholder="请输入用户名"></van-field>
-                <van-field v-model="param.password" required type="password" label="密码" placeholder="请输入密码" ></van-field>
+                <van-field v-model="param.card_no" required clearable label="卡券号" placeholder="请输入卡券号"></van-field>
+                <van-field v-model="param.password" required type="password" label="密码" placeholder="请输入卡券密码" ></van-field>
                 <van-field v-model="param.v_code" required clearable label="验证码" placeholder="请输入验证码">
                     <div style="width: 78px;height: 30px;" slot="button">
                         <img src="{{captcha_src('flat')}}" style="width: 100%;height: 100%;" onclick="this.src='{{captcha_src('flat')}}'+Math.random()">
@@ -49,7 +49,7 @@
     <transition name="van-slide-right">
         <div v-show="selectAddress" style="width: 100vw;height: 100vh;overflow: hidden;background-color: white;z-index: 50;position: absolute;left: 0;top: 0;">
             <van-nav-bar title="选择地址" left-text="返回" left-arrow @click-left="hideAddrList" ></van-nav-bar>
-            <van-address-list v-model="chosenAddressId" :list="addressList" @add="addAddress">
+            <van-address-list v-model="chosenAddressId" :list="addressList" @add="addAddress" @select="changeAddress">
                 <div slot="top" v-if="addressList.length<=0" style="text-align: center;width: 100vw;color: grey;margin-top: 20px;">
                     没有地址
                 </div>
@@ -60,7 +60,7 @@
     <transition name="van-slide-right">
         <div v-show="newAddress" style="width: 100vw;height: 100vh;overflow: hidden;background-color: white;z-index: 60;position: absolute;left: 0;top: 0;">
             <van-nav-bar title="新增地址" left-text="返回" left-arrow @click-left="hideNewAddr" ></van-nav-bar>
-            <van-address-edit show-postal></van-address-edit>
+            <van-address-edit show-postal :area-list="regionList"></van-address-edit>
         </div>
     </transition>
 @stop

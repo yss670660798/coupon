@@ -10,6 +10,7 @@ var vm=new Vue({
     },
     data: function() {
         return {
+            bg_loading:false,
             param:{
                 keyword:'',
                 date:'',
