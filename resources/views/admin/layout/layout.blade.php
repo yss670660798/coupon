@@ -26,7 +26,12 @@
             height: 74px;
         }
         .main{
-            height: calc(100vh - 65px);
+            /*height: calc(100vh - 65px);*/
+            position: absolute;
+            top: 65px;
+            left: 10px;
+            bottom: 10px;
+            right: 10px;
             overflow-y: scroll;
             padding: 5px;
         }
